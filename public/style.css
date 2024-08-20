@@ -6,7 +6,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* Estilo do corpo */
 body {
     font-size: 16px;
     color: #333;
@@ -14,19 +13,18 @@ body {
     line-height: 1.6;
 }
 
-/* Estilo do cabeçalho */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     color: white;
-   background-color: rgb(170, 146, 110);
+    background-color: rgb(170, 146, 110);
 }
 
-.header h2 {
+.header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 34px;
 }
 
 .nav {
@@ -42,12 +40,12 @@ a {
     height: 45px;
     border-radius: 50%;
     background-color: #ffffff;
-    color: #ffffff;
-    transition: background-color 0.3s ease;
+    color: #333; /* Changed from white to match hover color */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-    background-color: #fff;
+    background-color: #ddd; /* Slightly darker background for hover */
     color: #111;
 }
 
@@ -58,7 +56,7 @@ a:hover {
     margin-top: 40px;
 }
 
-.conteiner {
+.container {
     display: flex;
     max-width: 1300px;
     width: 100%;
@@ -68,15 +66,20 @@ a:hover {
 /* esquerda */
 .main-left {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 20pc;
-    flex: 1;
-    min-height: 300px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 15px;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    float: right;
+    padding: 40px 32px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.main-left,h2{
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 0);
 }
 
 .cadastro {
@@ -89,40 +92,48 @@ a:hover {
 }
 
 .cadastro input[type="text"],
-.cadastro input[type="email"] {
+.cadastro input[type="email"]{
     width: 100%;
     padding: 10px;
-    border: solid 1px #666;
+    border: solid 1px #00000088;
     border-radius: 5px;
     font-size: 17px;
 }
 
+.main-left input[type="button"]{
+    width: 50%;
+    padding: 10px;
+    border: solid 1px #00000088;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+input[type="button"]:hover{
+    background-color: #526642; 
+    color: white;
+    cursor: pointer;
+}
 /* direita */
 .main-right {
     flex: 1;
-    min-height: 300px;
+    min-height: 500px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 15px;
+    float: right;
 }
 
 /* Estilo para a seção de imagens */
 .imagens {
-    background-color: #eee;
-    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: #666;
-    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 img{
-    display: flex;
-    width: 200px;
-    height: 300px;
-    border-radius: 20px;
-    margin: 10px;
+    width: 100px;
+    height: 100px;
 }
+
+p{font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px; }
