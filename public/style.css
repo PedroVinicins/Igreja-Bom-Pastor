@@ -49,7 +49,7 @@ a:hover {
     color: #111;
 }
 
-/*container principal */
+/* Main container */
 .main-center {
     display: flex;
     justify-content: center;
@@ -64,7 +64,7 @@ a:hover {
     gap: 30px;
 }
 
-/* Seção esquerda */
+/* Left */
 .main-left {
     display: flex;
     justify-content: center;
@@ -78,8 +78,8 @@ a:hover {
     transition: all 0.4s ease;
 }
 
-.main-left:hover{
-    box-shadow: 0 10px 30px  rgba(0, 0, 0, 0.1);
+.main-left:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .main-left h2 {
@@ -101,9 +101,17 @@ a:hover {
 .cadastro input[type="email"] {
     width: 100%;
     padding: 10px;
+    outline: none;
     border: 1px solid #00000088;
     border-radius: 5px;
     font-size: 17px;
+}
+
+.cadastro input[type="text"]:hover,
+.cadastro input[type="email"]:hover {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    border-color: cornflowerblue;
 }
 
 .main-left input[type="button"] {
@@ -112,15 +120,16 @@ a:hover {
     border: 1px solid #00000088;
     border-radius: 5px;
     font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-input[type="button"]:hover {
-    background-color: #526642; 
+.main-left input[type="button"]:hover {
+    background-color: #526642;
     color: white;
     cursor: pointer;
 }
 
-/* Seção direita */
+/* Right */
 .main-right {
     display: block;
     flex: 1;
@@ -141,35 +150,39 @@ img {
     width: 300px;
     height: 300px;
     margin: 5px;
-    border: solid 1px;
+    border: solid 1px  rgb(170, 146, 110);
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 7px 29px 0px;
+    transition: all 0.4s ease;
 }
 
-.img-right{
+img:hover {
+    box-shadow: 0 10px 30px rgb(255, 255, 255);
+}
+
+.img-right {
     display: flex;
-    float: right;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     flex-direction: column;
+    float: right;
 }
 
-.img--right{
+.img--right {
     width: 100px;
     height: 100px;
+    margin-bottom: 5px;
     border: solid 1px;
     border-radius: 15px;
-    margin-bottom: 5px;
     box-shadow: #ffffff88;
     transition: all 0.4s ease;
 }
 
-.img--right:hover{
-    box-shadow: 0 10px 30px  rgba(0, 0, 0, 0.1);
+.img--right:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 p {
-    font-family: Arial, sans-serif;
     font-size: 18px;
     margin-bottom: 15px;
 }
@@ -180,7 +193,7 @@ p {
     align-items: center;
     justify-content: center;
     padding: 15px;
-    background-color: rgb(170, 146, 110); /* Mantendo a cor do header */
+    background-color: rgb(170, 146, 110);
     color: white;
     text-align: center;
     margin-top: 40px;
@@ -192,4 +205,3 @@ p {
     margin: 5px 0;
     font-size: 14px;
 }
-
