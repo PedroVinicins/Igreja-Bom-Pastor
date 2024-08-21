@@ -1,0 +1,9 @@
+{
+    "rules": {
+      "cadastros": {
+        ".read": true,
+        ".write": true
+      }
+    }
+  }
+  

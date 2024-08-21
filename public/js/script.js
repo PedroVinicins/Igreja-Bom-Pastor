@@ -1,21 +1,21 @@
-import { database } from './config.js';
+import { database } from './config.js'; // Certifique-se de que o caminho está correto
+import { ref, push } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtém referências aos elementos do formulário
     const nameInput = document.querySelector('.nome');
     const emailInput = document.querySelector('.email');
     const submitButton = document.querySelector('input[type="button"]');
 
-    // Adiciona um evento de clique ao botão de cadastro
     submitButton.addEventListener('click', function() {
-        // Obtém os valores dos campos do formulário
-        const name = nameInput.value;
-        const email = emailInput.value;
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
 
         if (name && email) {
-            // Envia os dados para o Firebase Realtime Database
+            // Cria uma referência para o nó 'cadastros'
             const newEntryRef = ref(database, 'cadastros');
-            set(newEntryRef.push(), {
+
+            // Adiciona um novo cadastro com os dados do formulário
+            push(newEntryRef, {
                 nome: name,
                 email: email
             }).then(() => {
