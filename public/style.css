@@ -147,44 +147,23 @@ a:hover {
 }
 
 img {
-    width: 300px;
-    height: 300px;
-    margin: 5px;
+    width: 315px;
+    height: 310px;
+    margin: 10px;
     border: solid 1px  rgb(170, 146, 110);
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px 7px 29px 0px;
+    box-shadow: rgb(255, 255, 255) 0px 7px 29px 0px;
     transition: all 0.4s ease;
 }
 
 img:hover {
-    box-shadow: 0 10px 30px rgb(255, 255, 255);
-}
-
-.img-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    float: right;
-}
-
-.img--right {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 5px;
-    border: solid 1px;
-    border-radius: 15px;
-    box-shadow: #ffffff88;
-    transition: all 0.4s ease;
-}
-
-.img--right:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 6px 40px rgba(0, 0, 0, 0.575);
 }
 
 p {
     font-size: 18px;
     margin-bottom: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .footer {
