@@ -1,0 +1,66 @@
+/* Estilos gerais para dispositivos móveis */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-left {
+        width: auto;
+        padding: 20px;
+    }   
+
+    .main-right {
+        border-collapse: 1px collapse;
+        min-height: auto;
+    }
+
+    .main-left input[type="button"] {
+        width: 50%;
+    }
+
+    img {
+        width: 40%;
+        height: auto;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .nav a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main-left input[type="button"] {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}

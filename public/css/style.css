@@ -125,7 +125,7 @@ a:hover {
 
 .main-left input[type="button"]:hover {
     background-color: #526642;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 

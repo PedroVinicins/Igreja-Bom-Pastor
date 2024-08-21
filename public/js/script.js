@@ -1,4 +1,4 @@
-import { database } from './config.js'; // Certifique-se de que o caminho está correto
+import { database } from './config.js';
 import { ref, push } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: email
             }).then(() => {
                 alert('Cadastro realizado com sucesso!');
-                // Limpa os campos do formulário
                 nameInput.value = '';
                 emailInput.value = '';
             }).catch((error) => {
