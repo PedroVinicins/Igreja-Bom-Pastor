@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+
 .header {
     display: flex;
     align-items: center;
@@ -49,7 +50,6 @@ a:hover {
     color: #111;
 }
 
-
 .main-center {
     display: flex;
     justify-content: center;
@@ -58,9 +58,10 @@ a:hover {
     max-width: 1300px;
     width: 100%;
     gap: 30px;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem na tela menor */
 }
 
-.main-right {
+.main-left {
     display: flex;
     width: 699px;
     padding: 40px 32px;
@@ -70,11 +71,11 @@ a:hover {
     transition: all 0.4s ease;
 }
 
-.main-right:hover {
+.main-left:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.459);
 }
 
-.main-left {
+.main-right {
     display: flex;
     flex: 1;
     min-height: 500px;
@@ -84,7 +85,7 @@ a:hover {
     border-radius: 15px;
 }
 
-textarea{
+textarea {
     padding: 5px;
     padding-top: 14px;
     outline: none;
@@ -92,21 +93,21 @@ textarea{
     border: none;
     background: transparent;
     font-size: 20px;
-    width: 590px;
+    width: 100%; 
     height: 390px;
     color: rgb(0, 0, 0);
-  }
-  
-  textarea::-webkit-scrollbar::-webkit-scrollbar {
+}
+
+textarea::-webkit-scrollbar {
     width: 4px;
-  }
-  
-  textarea::-webkit-scrollbar-thumb::-webkit-scrollbar-thumb {
+}
+
+textarea::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: bisque;
-  }
+}
 
-  img {
+img {
     width: 40%;
     height: auto;
     margin-left: 30%;
@@ -114,3 +115,61 @@ textarea{
     border-radius: 10px;
 }
 
+
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .nav {
+        gap: 5px;
+    }
+
+    .main-center {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-right, .main-left {
+        width: 100%;
+        padding: 20px;
+    }
+
+    img {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    textarea {
+        padding: 5px;
+        padding-top: 14px;
+        width: 100%; 
+        height: 390px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .main-right, .main-left {
+        padding: 15px;
+    }
+
+    textarea {
+        font-size: 18px;
+        height: 300px;
+    }
+}
