@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 2px;
+    color: white;
+    background-color: rgb(170, 146, 110);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.nav {
+    display: flex;
+    gap: 10px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: #111;
+}
+
+
+.main-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    max-width: 1300px;
+    width: 100%;
+    gap: 30px;
+}
+
+.main-right {
+    display: flex;
+    width: 699px;
+    padding: 40px 32px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(255, 255, 255) 0px 7px 29px 0px;
+    transition: all 0.4s ease;
+}
+
+.main-right:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.459);
+}
+
+.main-left {
+    display: flex;
+    flex: 1;
+    min-height: 500px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+textarea{
+    padding: 5px;
+    padding-top: 14px;
+    outline: none;
+    resize: none;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    width: 590px;
+    height: 390px;
+    color: rgb(0, 0, 0);
+  }
+  
+  textarea::-webkit-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  textarea::-webkit-scrollbar-thumb::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: bisque;
+  }
+
+  img {
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+

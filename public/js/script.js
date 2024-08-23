@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 nome: name,
                 email: email
             }).then(() => {
-                alert('Cadastro realizado com sucesso!');
+                alert('Cadastro realizado com sucesso!')
+                location.href='/public/Oraçoes.html';
                 nameInput.value = '';
                 emailInput.value = '';
             }).catch((error) => {

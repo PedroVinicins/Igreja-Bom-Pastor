@@ -50,12 +50,6 @@ a:hover {
 }
 
 /* Main container */
-.main-center {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
 .container {
     display: flex;
     margin: 1px;
