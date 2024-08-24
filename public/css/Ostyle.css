@@ -62,7 +62,7 @@ a:hover {
 }
 
 .main-left {
-    display: flex;
+    display: block;
     width: 699px;
     padding: 40px 32px;
     border-radius: 8px;
@@ -73,6 +73,18 @@ a:hover {
 
 .main-left:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.459);
+}
+
+.main-left input[type="button"] {
+    width: 5pc;
+    height: 5pc;
+    border-radius: 20%;
+    background-color: rgb(170, 146, 110);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 15px;
+    left: 90%;
 }
 
 .main-right {
@@ -116,6 +128,7 @@ img {
 }
 
 
+
 @media (max-width: 768px) {
     .header {
         display: flex;
@@ -139,6 +152,14 @@ img {
     .main-right, .main-left {
         width: 100%;
         padding: 20px;
+    }
+
+    .main-left input[type="button"] {
+        width: 70px;
+        height: 7 0px;
+        position: relative;
+        bottom: 15px;
+        left: 80%;
     }
 
     img {
