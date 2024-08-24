@@ -4,13 +4,13 @@ import { ref, push } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-dat
 document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.querySelector('.text');
     const submitButton = document.querySelector('input[type="button"]');
-    
+
     submitButton.addEventListener('click', function() {
         const text = textarea.value.trim();
 
         if (text) {
             // Cria uma referência para o nó 'cadastros'
-            const newEntryRef = ref(database, 'cadastros');
+            const newEntryRef = ref(database, 'Preces');
 
             // Adiciona um novo cadastro com os dados do formulário
             push(newEntryRef, {

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: email
             }).then(() => {
                 alert('Cadastro realizado com sucesso!')
-                location.href='/public/Oraçoes.html';
+                location.href='/Oraçoes.html';
                 nameInput.value = '';
                 emailInput.value = '';
             }).catch((error) => {
