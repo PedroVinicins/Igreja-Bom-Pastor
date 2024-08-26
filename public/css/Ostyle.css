@@ -80,6 +80,7 @@ a:hover {
 
 /* Main left */
 .main-left {
+    display: block;
     flex: 1;
     min-height: 500px;
     background-color: #ffffff;
@@ -202,15 +203,23 @@ textarea::-webkit-scrollbar-thumb {
         gap: 20px;
     }
 
-    .main-right, .main-left {
-        width: 100%;
+    .main-left {
+        width: auto;
         padding: 20px;
     }
 
+    .main-right {
+        border-collapse: 1px collapse;
+        min-height: auto;
+    }
+
+    .main-right img {
+       display: none;
+    }
+
     .main-left input[type="button"] {
-        width: 100px;
-        height: 40px;
-        left: 60%;
+        width: 50%;
+        left: 100%;
     }
 
     .main-bottom img {
