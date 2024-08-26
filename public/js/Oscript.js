@@ -9,21 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = textarea.value.trim();
 
         if (text) {
-            // Cria uma referência para o nó 'cadastros'
-            const newEntryRef = ref(database, 'Preces');
-
-            // Adiciona um novo cadastro com os dados do formulário
-            push(newEntryRef, {
-                preces: text,
+            const precesRef = ref(database, 'Preces');
+            push(precesRef, {
+                prece: text,
             }).then(() => {
-                alert('Preces enviadas com sucesso');
-                textarea.value = '';
+                alert('Prece enviada com sucesso!');
+                textarea.value = ''; // Limpa o campo de texto após o envio
             }).catch((error) => {
-                console.error('Erro:', error);
-                alert('Tente novamente.');
+                console.error('Erro ao enviar a prece:', error);
+                alert('Ocorreu um erro. Tente novamente.');
             });
         } else {
-            alert('Por favor, preencha todos os campos.');
+            alert('Por favor, preencha o campo de prece.');
         }
     });
 });

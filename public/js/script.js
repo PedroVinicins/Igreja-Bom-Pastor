@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (name && email) {
             // Cria uma referência para o nó 'cadastros'
             const newEntryRef = ref(database, 'cadastros');
-
-            // Adiciona um novo cadastro com os dados do formulário
             push(newEntryRef, {
                 nome: name,
                 email: email
