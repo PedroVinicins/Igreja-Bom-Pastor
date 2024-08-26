@@ -1,3 +1,4 @@
+/* Reset e base */
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +13,29 @@ body {
     line-height: 1.6;
 }
 
-span{color: #1100ffa1;}
+/* Estilo geral */
+span {
+    color: #1100ffa1;
+}
 
+.main-right img {
+    width: 15pc;
+    height: 15pc;
+    margin-left: 30%;
+    border: solid 1px  rgb(170, 146, 110);
+    border-radius: 15px;
+    box-shadow: rgba(7, 7, 7, 0.192) 0px 7px 29px 0px;
+    transition: all 0.4s ease;
+}
+
+/* Header */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    margin-bottom: 2px;
-    color: white;
     background-color: rgb(170, 146, 110);
+    color: white;
 }
 
 .header h1 {
@@ -51,25 +65,29 @@ a:hover {
     color: #111;
 }
 
-.main-center {
+/* Main content */
+.main-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 1px auto;
     max-width: 1300px;
     width: 100%;
     gap: 30px;
-    flex-wrap: wrap; /* Permite que os elementos se ajustem na tela menor */
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
+/* Main left */
 .main-left {
-    display: block;
-    width: 699px;
-    padding: 40px 32px;
-    border-radius: 8px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(255, 255, 255) 0px 7px 29px 0px;
-    transition: all 0.4s ease;
+    flex: 1;
+    min-height: 500px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 6px;
+    border-radius: 15px;
+    transition: box-shadow 1s;
 }
 
 .main-left:hover {
@@ -77,42 +95,91 @@ a:hover {
 }
 
 .main-left input[type="button"] {
-    width: 5pc;
-    height: 5pc;
-    border-radius: 20%;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
     background-color: rgb(170, 146, 110);
     border: none;
+    color: white;
     cursor: pointer;
     position: relative;
     bottom: 15px;
-    left: 90%;
+    left: 70%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
+.main-left input[type="button"]:hover {
+    background-color: #957854;
+}
+
+/* Main right */
 .main-right {
-    display: flex;
     flex: 1;
     min-height: 500px;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 15px;
+    margin: 6px;
 }
 
+/* Main bottom */
+.main-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: rgb(170, 146, 110);
+    color: white;
+    margin-top: 40px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+}
+
+.main-bottom p {
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.main-bottom .photos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-bottom img {
+    width: 30%;
+    height: auto;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 15px;
+    transition: all 0.4s ease;
+}
+
+.main-bottom img:hover {
+    box-shadow: 5px 6px 40px rgba(255, 255, 255, 0.699);
+}
+
+
+/* Textarea */
 textarea {
-    padding: 5px;
-    padding-top: 14px;
+    padding: 14px;
     outline: none;
     resize: none;
     border: none;
-    background: transparent;
-    font-size: 20px;
-    width: 100%; 
-    height: 390px;
-    color: rgb(0, 0, 0);
+    background: #f4f4f4;
+    font-size: 18px;
+    width: 100%;
+    height: 350px;
+    color: #333;
+    border-radius: 10px;
 }
 
 textarea::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 
 textarea::-webkit-scrollbar-thumb {
@@ -120,24 +187,8 @@ textarea::-webkit-scrollbar-thumb {
     background-color: bisque;
 }
 
-img {
-    width: 40%;
-    height: auto;
-    margin-left: 30%;
-    margin-top: 5px;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 15px;
-}
-
-
-
+/* Responsive */
 @media (max-width: 768px) {
-    .header {
-        display: flex;
-        flex-direction: row;
-        padding: 15px;
-    }
-
     .header h1 {
         font-size: 28px;
     }
@@ -146,7 +197,7 @@ img {
         gap: 5px;
     }
 
-    .main-center {
+    .main-content {
         flex-direction: column;
         gap: 20px;
     }
@@ -157,23 +208,17 @@ img {
     }
 
     .main-left input[type="button"] {
-        width: 70px;
-        height: 7 0px;
-        position: relative;
-        bottom: 15px;
-        left: 80%;
+        width: 100px;
+        height: 40px;
+        left: 60%;
     }
 
-    img {
-        width: 80%;
-        margin-left: 10%;
+    .main-bottom img {
+        width: 70%;
     }
 
     textarea {
-        padding: 5px;
-        padding-top: 14px;
-        width: 100%; 
-        height: 390px;
+        height: 300px;
     }
 }
 
@@ -191,8 +236,18 @@ img {
         padding: 15px;
     }
 
+    .main-left input[type="button"] {
+        width: 80px;
+        height: 35px;
+        left: 50%;
+    }
+
+    .main-bottom img {
+        width: 90%;
+    }
+
     textarea {
-        font-size: 18px;
-        height: 300px;
+        font-size: 16px;
+        height: 250px;
     }
 }
