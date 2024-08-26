@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+span{color: #1100ffa1;}
 
 .header {
     display: flex;
@@ -123,8 +124,9 @@ img {
     width: 40%;
     height: auto;
     margin-left: 30%;
+    margin-top: 5px;
     border: solid 1px rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 
