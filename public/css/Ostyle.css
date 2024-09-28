@@ -22,7 +22,7 @@ span {
     width: 15pc;
     height: 15pc;
     margin-left: 30%;
-    border: solid 1px  rgb(170, 146, 110);
+    border: solid 1px rgb(170, 146, 110);
     border-radius: 15px;
     box-shadow: rgba(7, 7, 7, 0.192) 0px 7px 29px 0px;
     transition: all 0.4s ease;
@@ -48,7 +48,7 @@ span {
     gap: 10px;
 }
 
-a {
+.header a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,9 +70,8 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 1px auto;
+    margin: 20px auto;
     max-width: 1300px;
-    width: 100%;
     gap: 30px;
     padding: 20px;
     flex-wrap: wrap;
@@ -80,19 +79,17 @@ a:hover {
 
 /* Main left */
 .main-left {
-    display: block;
     flex: 1;
-    min-height: 500px;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 6px;
     border-radius: 15px;
-    transition: box-shadow 1s;
+    transition: box-shadow 0.4s ease;
 }
 
 .main-left:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.459);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .main-left input[type="button"] {
@@ -117,7 +114,6 @@ a:hover {
 /* Main right */
 .main-right {
     flex: 1;
-    min-height: 500px;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -161,9 +157,38 @@ a:hover {
 }
 
 .main-bottom img:hover {
-    box-shadow: 5px 6px 40px rgba(255, 255, 255, 0.699);
+    box-shadow: 5px 6px 40px rgba(255, 255, 255, 0.7);
 }
 
+/* Eventos */
+.eventos {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.eventos h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Evephotos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.Evephotos a img {
+    width: 50%;
+    height: auto;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 15px;
+    transition: all 0.4s ease;
+}
+
+.Evephotos a img:hover {
+    box-shadow: 5px 6px 40px rgba(255, 255, 255, 0.7);
+}
 
 /* Textarea */
 textarea {
@@ -203,23 +228,15 @@ textarea::-webkit-scrollbar-thumb {
         gap: 20px;
     }
 
-    .main-left {
+    .main-left, .main-right {
         width: auto;
         padding: 20px;
     }
 
-    .main-right {
-        border-collapse: 1px collapse;
-        min-height: auto;
-    }
-
-    .pix img {
-       display: none;
-    }
-
     .main-left input[type="button"] {
-        width: 50%;
-        left: 100%;
+        width: 100%;
+        left: 0;
+        margin-top: 10px;
     }
 
     .main-bottom img {
@@ -241,14 +258,11 @@ textarea::-webkit-scrollbar-thumb {
         height: 35px;
     }
 
-    .main-right, .main-left {
-        padding: 15px;
-    }
-
     .main-left input[type="button"] {
-        width: 80px;
-        height: 35px;
-        left: 50%;
+        width: 100px;
+        height: 40px;
+        left: 0;
+        margin-top: 10px;
     }
 
     .main-bottom img {
