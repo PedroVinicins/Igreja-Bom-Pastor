@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/Ostyle.css">
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/Oscript.js"></script>
-    <title>Paróquia Bom Pastor Marituba</title>
+    <title>Paróquia Bom Pastor Marituba</title> 
 </head>
 <body>
     <header class="header">
@@ -64,14 +64,11 @@
 
     <div class="eventos">
         <h2>Eventos da Igreja</h2>
-        <div class="Evephotos">
-            <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/paroquia-bom-pastor-marituba.appspot.com/o/photos%2FEventos%2FIMg%20evento%20(3).jpg?alt=media&token=9a180915-8825-4ea5-a0fc-d6c4adedc707" alt="28 de setembro de 2024"><h2>28 de setembro de 2024</h2></a>
-            
-            <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/paroquia-bom-pastor-marituba.appspot.com/o/photos%2FEventos%2FIMg%20evento%20(1).jpg?alt=media&token=72cebb5b-2ba3-4d97-8908-a5db77d8e220" alt="28 de setembro de 2024"></a>
-            <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/paroquia-bom-pastor-marituba.appspot.com/o/photos%2FEventos%2FIMg%20evento%20(2).jpg?alt=media&token=8bf27070-a997-4ae4-bb59-c91ba040c44e" alt="28 de setembro de 2024"></a>
-            <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/paroquia-bom-pastor-marituba.appspot.com/o/photos%2FEventos%2FIMg%20evento%20(4).jpg?alt=media&token=c26227be-b5d6-4429-9f02-af5319cce88c" alt="28 de setembro de 2024"></a>
+        <div id="event-list">
+            <!-- Os eventos serão carregados aqui dinamicamente -->
         </div>
-    </div>
+        <button onclick="adicionarEvento()">Adicionar</button> <input type="file" id="imagemEvento" accept="image/*">
 
+    </div>
 </body>
 </html>
