@@ -3,8 +3,6 @@ import { ref, push, onChildAdded } from 'https://www.gstatic.com/firebasejs/9.6.
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.querySelector('.text');
-    const submitButton = document.querySelector('input[type="button"]');
     const eventList = document.getElementById('event-list');
     const imagemInput = document.getElementById('imagemEvento'); // Input para a imagem
 
@@ -51,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para exibir o evento na página
     function exibirEvento(snapshot) {
         const data = snapshot.val();
+        const eventoId = snapshot.key;  // Para identificar o evento específico
         const eventoDiv = document.createElement('div');
         eventoDiv.classList.add('evento');
         
@@ -66,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const comentarioDiv = document.createElement('div');
         comentarioDiv.classList.add('comentarios');
         
+        // Botão para adicionar comentários
         const botaoComentar = document.createElement('button');
         botaoComentar.textContent = "Comentar";
         botaoComentar.onclick = function() {
@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const comentarioP = document.createElement('p');
                 comentarioP.textContent = comentario;
                 comentarioDiv.appendChild(comentarioP);
+                
+                // Salvar o comentário no Firebase
+                const comentariosRef = ref(database, `Eventos/${eventoId}/comentarios`);
+                push(comentariosRef, comentario);
             }
         };
         
@@ -81,6 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
         eventoDiv.appendChild(imagemEvento); // Exibe a imagem do evento
         eventoDiv.appendChild(comentarioDiv);
         eventoDiv.appendChild(botaoComentar);
+        
+        // Exibe os comentários já salvos no Firebase para este evento
+        const comentariosRef = ref(database, `Eventos/${eventoId}/comentarios`);
+        onChildAdded(comentariosRef, (comentarioSnapshot) => {
+            const comentarioP = document.createElement('p');
+            comentarioP.textContent = comentarioSnapshot.val();
+            comentarioDiv.appendChild(comentarioP);
+        });
         
         eventList.appendChild(eventoDiv);
     }
