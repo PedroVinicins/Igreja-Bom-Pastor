@@ -229,6 +229,10 @@ textarea::-webkit-scrollbar-thumb {
         gap: 5px;
     }
 
+    .pix{
+        display: none;
+    }
+    
     .main-content {
         flex-direction: column;
         gap: 20px;
