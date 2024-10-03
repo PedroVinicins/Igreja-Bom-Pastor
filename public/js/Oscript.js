@@ -1,5 +1,5 @@
 import { database } from './config.js';
-import { ref, push } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
+import { ref, push, onChildAdded } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,39 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             nome: nomeEvento,
                             imagem: urlImagem
                         }).then(() => {
-                            const eventoDiv = document.createElement('div');
-                            eventoDiv.classList.add('evento');
-                            
-                            const tituloEvento = document.createElement('h3');
-                            tituloEvento.textContent = nomeEvento;
-
-                            const imagemEvento = document.createElement('img');
-                            imagemEvento.src = urlImagem;
-                            imagemEvento.alt = nomeEvento;
-                            imagemEvento.style.maxWidth = '200px';
-                            imagemEvento.style.display = 'block';
-
-                            const comentarioDiv = document.createElement('div');
-                            comentarioDiv.classList.add('comentarios');
-                            
-                            const botaoComentar = document.createElement('button');
-                            botaoComentar.textContent = "Comentar";
-                            botaoComentar.onclick = function() {
-                                const comentario = prompt("Digite seu comentário:");
-                                if (comentario) {
-                                    const comentarioP = document.createElement('p');
-                                    comentarioP.textContent = comentario;
-                                    comentarioDiv.appendChild(comentarioP);
-                                }
-                            };
-                            
-                            eventoDiv.appendChild(tituloEvento);
-                            eventoDiv.appendChild(imagemEvento); // Exibe a imagem do evento
-                            eventoDiv.appendChild(comentarioDiv);
-                            eventoDiv.appendChild(botaoComentar);
-                            
-                            eventList.appendChild(eventoDiv);
-                            
                             alert('Evento adicionado com sucesso com imagem!');
                         }).catch((error) => {
                             console.error('Erro ao adicionar o evento:', error);
@@ -80,6 +47,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    // Função para exibir o evento na página
+    function exibirEvento(snapshot) {
+        const data = snapshot.val();
+        const eventoDiv = document.createElement('div');
+        eventoDiv.classList.add('evento');
+        
+        const tituloEvento = document.createElement('h3');
+        tituloEvento.textContent = data.nome;
+
+        const imagemEvento = document.createElement('img');
+        imagemEvento.src = data.imagem;
+        imagemEvento.alt = data.nome;
+        imagemEvento.style.maxWidth = '200px';
+        imagemEvento.style.display = 'block';
+
+        const comentarioDiv = document.createElement('div');
+        comentarioDiv.classList.add('comentarios');
+        
+        const botaoComentar = document.createElement('button');
+        botaoComentar.textContent = "Comentar";
+        botaoComentar.onclick = function() {
+            const comentario = prompt("Digite seu comentário:");
+            if (comentario) {
+                const comentarioP = document.createElement('p');
+                comentarioP.textContent = comentario;
+                comentarioDiv.appendChild(comentarioP);
+            }
+        };
+        
+        eventoDiv.appendChild(tituloEvento);
+        eventoDiv.appendChild(imagemEvento); // Exibe a imagem do evento
+        eventoDiv.appendChild(comentarioDiv);
+        eventoDiv.appendChild(botaoComentar);
+        
+        eventList.appendChild(eventoDiv);
+    }
+
+    // Monitorar novos eventos em tempo real
+    const eventosRef = ref(database, 'Eventos');
+    onChildAdded(eventosRef, exibirEvento);
 
     // Exemplo: Adicionando a função ao botão na página
     document.querySelector('button').addEventListener('click', adicionarEvento);
