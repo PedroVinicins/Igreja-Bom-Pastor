@@ -38,9 +38,20 @@ span {
     color: white;
 }
 
+.header img{
+    width: 49px;
+    height: 49px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #333;
+}
+
+
 .header h1 {
+    display: flex;
     margin: 0;
-    font-size: 34px;
+    font-size: 44px;
 }
 
 .nav {
