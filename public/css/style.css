@@ -36,7 +36,7 @@ body {
     font-size: 44px;
 }
 
-.nav {
+.nav{
     display: flex;
     gap: 10px;
 }

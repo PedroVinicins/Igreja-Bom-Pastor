@@ -2,19 +2,36 @@
 @media (max-width: 768px) {
     .header {
         display: flex;
-        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         padding: 10px;
+        margin-bottom: 5px;
     }
 
     .header h1 {
-        font-size: 28px;
+        align-items: center;
+        display: flex;
+        margin: 5;
+        font-size: 44px;
     }
 
+.header img{
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #333;
+}
+
     .nav {
-        flex-direction: row;
-        gap: 5px;
-        margin-top: 10px;
+        display: none;
     }
+
+.nav-center{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
     .container {
         flex-direction: column;
