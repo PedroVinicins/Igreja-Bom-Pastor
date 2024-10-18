@@ -18,9 +18,28 @@ span {
     color: #1100ffa1;
 }
 
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: #111;
+}
+
 .main-right img {
-    width: 15pc;
-    height: 15pc;
+    width: 100%;
+    max-width: 240px; /* Substitui 15pc */
+    height: auto;
     margin-left: 30%;
     border: solid 1px rgb(170, 146, 110);
     border-radius: 15px;
@@ -38,7 +57,7 @@ span {
     color: white;
 }
 
-.header img{
+.header img {
     width: 49px;
     height: 49px;
     margin: 10px;
@@ -46,7 +65,6 @@ span {
     background-color: #ffffff;
     color: #333;
 }
-
 
 .header h1 {
     display: flex;
@@ -125,16 +143,37 @@ a:hover {
 /* Main right */
 .main-right {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: 1px;
     border-radius: 15px;
-    margin: 6px;
+    transition: box-shadow 0.4s ease;
+    text-align: center;
 }
+
+.main-right img {
+    display: flex;
+    margin-left: 150px;
+    max-width: 50%;
+    height: auto; 
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.main-right h2, .main-right p, .main-right h3 {
+    margin: 7px 0;
+}
+
 
 /* Main bottom */
 .main-bottom {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -144,6 +183,10 @@ a:hover {
     margin-top: 40px;
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px 8px 0 0;
+}
+
+.nav-button {
+    display: none;
 }
 
 .main-bottom p {
@@ -179,33 +222,57 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 #event-list {
     margin-top: 20px;
 }
+
 .evento {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
+
 .evento:last-child {
     border-bottom: none;
 }
+
 .comentarios {
     margin-top: 10px;
     font-size: 0.9em;
     color: #555;
 }
+
 button {
+    width: 100%;
     margin-top: 20px;
     padding: 10px 15px;
-    background-color:rgb(170, 146, 110);
+    background-color: rgb(170, 146, 110);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
 button:hover {
-    background-color: #000000a9;
+    background-color: rgba(144, 109, 73, 0.89);
 }
+
+::-webkit-file-upload-button{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: rgb(40, 34, 26);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+::-webkit-file-upload-button:hover{
+    background-color: rgba(144, 109, 73, 0.89);
+ }
 
 /* Textarea */
 textarea {
@@ -233,17 +300,53 @@ textarea::-webkit-scrollbar-thumb {
 /* Responsive */
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 28px;
+        align-items: center;
+        font-size: 48px;
+    }
+
+    @media (max-width: 768px) {
+        .main-right {
+            margin: 0 auto;
+            max-width: 100%; 
+            padding: 15px;
+        }
+    
+        .main-right img {
+            max-width: 80%; /* Garante que a imagem seja menor em telas menores */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .main-right {
+            padding: 10px;
+        }
+    
+        .main-right img {
+            max-width: 70%;
+        }
+    
+        .main-right h2 {
+            font-size: 1.5em; 
+        }
+    
+        .main-right p, .main-right h3 {
+            font-size: 1em;
+        }
     }
 
     .nav {
+        display: none;
         gap: 5px;
     }
 
-    .pix{
+    .nav-button {
+        display: flex;
+    }
+
+    .pix {
         display: none;
     }
-    
+
     .main-content {
         flex-direction: column;
         gap: 20px;
