@@ -22,4 +22,4 @@ Este repositório contém o código-fonte do site oficial da Igreja Bom Pastor, 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/igreja-bom-pastor.git
+   git clone https://github.com/PedroVinicins/igreja-bom-pastor.git
